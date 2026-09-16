@@ -1,4 +1,6 @@
 Edgar A I2ADE
+//NO USAR SLEEP O PAUSE, solo usar WAIT();
+
 Enunciado 1:
 a) Realiza un programa llamado malla.c que produzca el siguiente árbol de procesos. El programa
 recibirá dos argumentos ‘x’ e ‘y’ que representan el número de filas y columnas. Para
