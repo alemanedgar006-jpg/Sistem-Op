@@ -1,0 +1,6 @@
+Edgar A I2ADE
+Enunciado 1:
+a) Realiza un programa llamado malla.c que produzca el siguiente árbol de procesos. El programa
+recibirá dos argumentos ‘x’ e ‘y’ que representan el número de filas y columnas. Para
+comprobar la estructura de procesos que realmente estamos creando debemos emplear la
+llamada al sistema “pstree –c” (2 puntos)
