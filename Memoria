@@ -6,3 +6,9 @@ a) Realiza un programa llamado malla.c que produzca el siguiente árbol de proce
 recibirá dos argumentos ‘x’ e ‘y’ que representan el número de filas y columnas. Para
 comprobar la estructura de procesos que realmente estamos creando debemos emplear la
 llamada al sistema “pstree –c” (2 puntos)
+// Siguiendo las instrucciones he de crear primero el codigo que haga las estructuras en horizontal tal que:
+  O
+ /|\
+O O O
+
+El modo para lograr esta estructura radica en que el pid de los hijo == 0 asi que al controlar con un if deberia de mantenerse en el padre e ignorar a los hijos.
