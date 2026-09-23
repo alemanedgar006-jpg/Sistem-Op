@@ -9,7 +9,12 @@ int main(){
     switch(pid){
       case -1:
         perror("ERROR");
-        exit(-1);
+        exit(1);
+      case 0:
+
+      default:
+
+        exit(0);
 
       
     }
