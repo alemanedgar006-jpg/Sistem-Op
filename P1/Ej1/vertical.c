@@ -15,12 +15,8 @@ int main(){
         break;
       default:
         printf("Padre 1 creado con id: %d",getpid());
-        exit(0);
-
-      
+        exit(0);   
     }
   }
-
-  
   exit(0);
 }
