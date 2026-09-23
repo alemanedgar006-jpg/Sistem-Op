@@ -11,7 +11,7 @@ int main(){
         perror("ERROR");
         exit(1);
       case 0:
-        printf("Hijo de generacion %d creado con id",i+1);
+        printf("Hijo de generacion %d creado con id: %d, id padre: %d",i+1, getpid(),getppid());
         break;
       default:
         printf("Padre");
