@@ -3,11 +3,13 @@
 #include <stdlib.h>
 
 
-void gestor(){
+void gestor(pid_t root){
   pid_t pid;
+  char cadena[20];
+  sprintf(cadena,"%d",root);
   pid=fork();
   if(pid==0){
-    execlp("pstree","pstree","-c",NULL);
+    execlp("pstree","pstree","-c",cadena,NULL);
     perror("execlp");
     exit(1);
   }
@@ -57,7 +59,7 @@ int main(int argc, char *argv[]){
       exit(0);
     }
   }
-  gestor();
+  gestor(root);
   for(int j=0;j<y;j++){
     wait(NULL);
   }
