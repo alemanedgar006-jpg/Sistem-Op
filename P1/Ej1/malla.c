@@ -46,6 +46,9 @@ int main(int argc, char *argv[]){
           perror("ERROR DE FORK");
           exit(1);
         }
+        if(pid==0){
+          printf("Proceso creado vertical PID=%d Padre=%d\n",getpid(),getppid());
+        }
         if(pid>0){
           wait(NULL);
           exit(0);
