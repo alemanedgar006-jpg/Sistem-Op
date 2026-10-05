@@ -25,7 +25,7 @@ int main(int argc, char *argv[]){
   y=atoi(argv[2]);
   
   if(x<=0||y<=0){
-    perror("ARGUMENTOS NEGATIVOS");
+    printf("ARGUMENTOS INVALIDOS");
     exit(1);
   }
 
