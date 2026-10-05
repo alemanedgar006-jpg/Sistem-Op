@@ -51,7 +51,7 @@ int main(int argc, char *argv[]){
     }
   }
   gestor();
-  for(int j=0;j<0;j++){
+  for(int j=0;j<y;j++){
     wait(NULL);
   }
 
