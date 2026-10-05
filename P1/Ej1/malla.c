@@ -18,7 +18,7 @@ int main(int argc, char *argv[]){
   pid_t pid;
   int x,y;
   if(argc!=3){
-    perror("ERROR DE ARGUMENTOS");
+    printf("ERROR DE ARGUMENTOS");
     exit(1);
   }
   x=atoi(argv[1]);
