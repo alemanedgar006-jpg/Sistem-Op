@@ -41,7 +41,7 @@ int main(int argc, char *argv[]){
       exit(1);
     }
     if(pid==0){
-      printf("Proceso creado PID=%d Padre=%d\n",getpid(), getppid());
+      printf("Proceso creado horizontal PID=%d Padre=%d\n",getpid(), getppid());
       for(int i=2;i<=x;i++){
         pid=fork();
         if(pid<0){
