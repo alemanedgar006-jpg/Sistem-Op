@@ -14,6 +14,11 @@ int main(int argc char *argv[]){
     perror("ERROR DE SEGUNDOS");
     exit(1);
   }
+  printf("Soy el proceso ejec mi pid es: %d \n",getpid());
+  A=fork();
+  switch(A){
 
+    
+  }
   
 }
