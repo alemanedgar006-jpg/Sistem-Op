@@ -9,4 +9,11 @@ int main(int argc char *argv[]){
     perror("ERROR DE ARGUMENTOS");
     exit(1);
   }
+  segundos=atoi(argv[1]);
+  if(segundos<=0){
+    perror("ERROR DE SEGUNDOS");
+    exit(1);
+  }
+
+  
 }
