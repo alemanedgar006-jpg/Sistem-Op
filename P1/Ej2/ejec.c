@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc char *argv[]){
+int main(int argc, char *argv[]){
   pid_t impEjec,impA;
   pid_t A,B,X,Y,Z;
   int segundos;
