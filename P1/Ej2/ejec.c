@@ -39,6 +39,7 @@ int main(int argc, char *argv[]){
         }
         if(X==0){
           printf("Soy el proceso X mi pid es: %d, mi padres es %d, mi abuelo es %d, mi bisabuelo es %d \n",getpid(),getppid(),impA,impEjec);
+          exit(0);
         }
         Y=fork();
         if(Y<0){
@@ -47,6 +48,7 @@ int main(int argc, char *argv[]){
         }
         if(Y==0){
           printf("Soy el proceso Y mi pid es: %d, mi padres es %d, mi abuelo es %d, mi bisabuelo es %d \n",getpid(),getppid(),impA,impEjec);
+          exit(0);
         }
         Z=fork();
         if(Z<0){
@@ -55,6 +57,7 @@ int main(int argc, char *argv[]){
         }
         if(Z==0){
           printf("Soy el proceso Z mi pid es: %d, mi padres es %d, mi abuelo es %d, mi bisabuelo es %d \n",getpid(),getppid(),impA,impEjec);
+          exit(0);
         }
         
       }
