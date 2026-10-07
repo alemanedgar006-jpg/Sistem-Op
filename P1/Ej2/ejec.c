@@ -2,6 +2,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void gestor(pid_t root){
+  pid_t pid;
+  char cadena[20];
+  sprintf(cadena,"%d",root);
+  pid=fork();
+  if(pid==0){
+    execlp("pstree","pstree","-c",cadena,NULL);
+    perror("execlp");
+    exit(1);
+  }
+  wait(NULL);
+}
+
 int main(int argc, char *argv[]){
   pid_t impEjec,impA;
   pid_t A,B,X,Y,Z;
@@ -59,6 +72,7 @@ int main(int argc, char *argv[]){
           printf("Soy el proceso Z mi pid es: %d, mi padres es %d, mi abuelo es %d, mi bisabuelo es %d \n",getpid(),getppid(),impA,impEjec);
           exit(0);
         }
+        wait
         
       }
   }
