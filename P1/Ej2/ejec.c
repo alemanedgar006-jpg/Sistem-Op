@@ -37,7 +37,7 @@ int main(int argc, char *argv[]){
           perror("ERROR AL CREAR X");
           exit(1);
         }
-        else{
+        if(X==0){
           printf("Soy el proceso X mi pid es: %d, mi padres es %d, mi abuelo es %d, mi bisabuelo es %d \n",getpid(),getppid(),impA,impEjec);
         }
         Y=fork();
@@ -45,7 +45,7 @@ int main(int argc, char *argv[]){
           perror("ERROR AL CREAR Y");
           exit(1);
         }
-        else{
+        if(Y==0){
           printf("Soy el proceso Y mi pid es: %d, mi padres es %d, mi abuelo es %d, mi bisabuelo es %d \n",getpid(),getppid(),impA,impEjec);
         }
         Z=fork();
@@ -53,7 +53,7 @@ int main(int argc, char *argv[]){
           perror("ERROR AL CREAR Z");
           exit(1);
         }
-        else{
+        if(Z==0){
           printf("Soy el proceso Z mi pid es: %d, mi padres es %d, mi abuelo es %d, mi bisabuelo es %d \n",getpid(),getppid(),impA,impEjec);
         }
         
