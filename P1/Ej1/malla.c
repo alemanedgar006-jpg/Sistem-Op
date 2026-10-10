@@ -1,7 +1,20 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/wait.h>
 
+void comprobar_argumentos(int argc, char *argv[],int *x, int *y){
+  if(argc!=3){
+    printf("ERROR DE ARGUMENTOS");
+    exit(1);
+  }
+  *x=atoi(argv[1]);
+  *y=atoi(argv[2]);
+  if(x<=0||y<=0){
+    printf("ARGUMENTOS INVALIDOS");
+    exit(1);
+  } 
+}
 
 void gestor(pid_t root){
   pid_t pid;
@@ -21,18 +34,10 @@ int main(int argc, char *argv[]){
   pid_t pid;
 
   root=getpid();
-  int x,y;
-  if(argc!=3){
-    printf("ERROR DE ARGUMENTOS");
-    exit(1);
-  }
-  x=atoi(argv[1]);
-  y=atoi(argv[2]);
-  
-  if(x<=0||y<=0){
-    printf("ARGUMENTOS INVALIDOS");
-    exit(1);
-  }
+  int x=0;
+  int y=0;
+  comprobar_argumentos(argc,argv,&x,&y);
+
 
   for(int j=0;j<y;j++){
     pid=fork();
