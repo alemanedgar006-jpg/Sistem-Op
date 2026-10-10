@@ -29,17 +29,10 @@ void gestor(pid_t root){
   wait(NULL);
 }
 
-int main(int argc, char *argv[]){
-  pid_t root;
+ void crear_procesos(int x, int y, pid_t root){
+   
   pid_t pid;
-
-  root=getpid();
-  int x=0;
-  int y=0;
-  comprobar_argumentos(argc,argv,&x,&y);
-
-
-  for(int j=0;j<y;j++){
+for(int j=0;j<y;j++){
     pid=fork();
     if(pid<0){
       perror("ERROR DE FORK");
@@ -67,7 +60,17 @@ int main(int argc, char *argv[]){
   gestor(root);
   for(int j=0;j<y;j++){
     wait(NULL);
-  }
+  }  
+}
 
-  exit(0);
+int main(int argc, char *argv[]){
+  pid_t root;
+
+  root=getpid();
+  int x=0;
+  int y=0;
+  comprobar_argumentos(argc,argv,&x,&y);
+  crear_procesos(x,y,root);
+
+    exit(0);
 }
