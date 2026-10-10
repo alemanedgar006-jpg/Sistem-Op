@@ -36,4 +36,10 @@ con los segundos indicados por el argumento. Se deberá controlar la correcta de
 
 La estructura puede hacerse a traves de varios fork anidados y usando wait(NULL) como control para asegurarse de que los padres no mueran antes que los hijos, la complicacion proviene de pstree y las
 señales a enviar. Usando el kill() puedo asegurarme de que sea Z el proceso que envia la señal a A, y guardando el pid de A y ejec en variables puedo asegurarme tanto de que se envia al proceso correcto
-asi como facilitar a la hora de imprimir la salida de cada proceso.
+asi como facilitar a la hora de imprimir la salida de cada proceso. Aparte de esto debo de utilizar alarmas y variables globales para controlar tanto la destruccion como el tiempo transcurrido y la ejecucion de 
+pstree.
+
+Funciones 
+comprobar argumentos: recibe los argumentos del programa y compruebo que los segundos de la alarma sean positivos
+gestor: recibe el pid del proceso ejec y ejecuta pstree cuando el proceso Z active la señal.
+main: recibe los argumentos y ejecuta el nido de forks para crear el arbol de procesos.
