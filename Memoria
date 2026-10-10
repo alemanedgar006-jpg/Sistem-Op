@@ -25,3 +25,11 @@ main: recibe los argumentos y los envia a la funcion de comprobacion y guarda el
 
 
 Enunciado 2: 
+
+b) Realiza un programa llamado ejec.c que reciba un argumento. El programa tendrá que generar
+el árbol de procesos que se indica y llevar a cabo la funcionalidad que se describe a
+continuación. El proceso Z, transcurridos los segundos indicados por el argumento, enviará una
+señal al proceso A. El proceso A, al recibir la señal, ejecutará el comando “pstree”. El proceso
+Z no puede utilizar el comando “sleep”, por lo que el proceso Z debe planificarse una alarma
+con los segundos indicados por el argumento. Se deberá controlar la correcta destrucción del
+árbol (los padres no pueden morir antes que los hijos). (2 puntos)
