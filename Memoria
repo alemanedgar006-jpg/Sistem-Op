@@ -17,5 +17,10 @@ Una vez comprobados debe de generar la estructura siguiendo los parametros intro
 El PSTREE debe de recibir el pid del proceso original o de lo contrario mostrara todos los procesos de Linux. 
 A pesar de que al ejecutar el programa no soy capaz de hacer que muestre la estructura, por medio de mensajes debug puedo comprobar que la estructura es creada segun los parametros.
 
+Funciones:
+comprobar argumentos: recibe los argumentos del main y hace las comprobaciones necesarias, comprueba que sean exactamente 3 argumentos, que los 2 ultimos sean numeros y que estos numeros sean positivos
+gestor: recibe el pid raiz de todos los procesos y ejecuta pstree una vez se ha construido el arbol
+main: recibe los argumentos y los envia al gestor, crea los procesos por medio de dos bucles anidados combinando lo visto en la creacion de procesos verticales y horizontales.
+
 
 Enunciado 2: 
