@@ -33,3 +33,7 @@ señal al proceso A. El proceso A, al recibir la señal, ejecutará el comando �
 Z no puede utilizar el comando “sleep”, por lo que el proceso Z debe planificarse una alarma
 con los segundos indicados por el argumento. Se deberá controlar la correcta destrucción del
 árbol (los padres no pueden morir antes que los hijos). (2 puntos)
+
+La estructura puede hacerse a traves de varios fork anidados y usando wait(NULL) como control para asegurarse de que los padres no mueran antes que los hijos, la complicacion proviene de pstree y las
+señales a enviar. Usando el kill() puedo asegurarme de que sea Z el proceso que envia la señal a A, y guardando el pid de A y ejec en variables puedo asegurarme tanto de que se envia al proceso correcto
+asi como facilitar a la hora de imprimir la salida de cada proceso.
