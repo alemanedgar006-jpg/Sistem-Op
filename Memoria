@@ -12,3 +12,10 @@ llamada al sistema “pstree –c” (2 puntos)
 O O O
 
 El modo para lograr esta estructura radica en que el pid de los hijo == 0 asi que al controlar con un if deberia de mantenerse en el padre e ignorar a los hijos.
+La malla debe de recibir dos argumentos por parte del usuario los cuales deben de ser comprobados en una funcion y de lo contrario imprimir el error.
+Una vez comprobados debe de generar la estructura siguiendo los parametros introducidos por el usuario y por ultimo debe de ejecutar el comando PSTREE para mostrar la estructura.
+El PSTREE debe de recibir el pid del proceso original o de lo contrario mostrara todos los procesos de Linux. 
+A pesar de que al ejecutar el programa no soy capaz de hacer que muestre la estructura, por medio de mensajes debug puedo comprobar que la estructura es creada segun los parametros.
+
+
+Enunciado 2: 
