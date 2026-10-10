@@ -87,12 +87,12 @@ int main(int argc, char *argv[]){
           wait(NULL);
           printf("Soy el proceso B (%d) y muero \n",getpid());      
           exit(0);
-      }
-    else{
-      wait(NULL);
-      printf("Soy el proceso A (%d) y muero \n",impA);  
-      exit(0);
-    }
+          }
+        else{
+          wait(NULL);
+          printf("Soy el proceso A (%d) y muero \n",impA);  
+          exit(0);
+        }
   }
   else{
     wait(NULL);
