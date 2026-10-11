@@ -40,6 +40,17 @@ asi como facilitar a la hora de imprimir la salida de cada proceso. Aparte de es
 pstree.
 
 Funciones 
-comprobar argumentos: recibe los argumentos del programa y compruebo que los segundos de la alarma sean positivos
-gestor: recibe el pid del proceso ejec y ejecuta pstree cuando el proceso Z active la señal.
-main: recibe los argumentos y ejecuta el nido de forks para crear el arbol de procesos.
+comprobar_argumentos: recibe los argumentos del programa y compruebo que los segundos de la alarma sean positivos
+gestor: recibe el pid del proceso ejec y crea un hijo auxiliar que ejecuta pstree cuando el proceso Z envia la señal al proceso A.
+proceso_ejec: Imprime por pantalla la salida del proceso ejec y modifica la variable global impEjec para almacenar el pid del proceso inicial. Acto seguido llama a la funcion crear_A para continuar la cadena tras lo cual espera a que muera A para imprimir su ultima salida
+crear_A: crea el proceso A, imprime error si hay un error de fork, de lo contrario pasa al proceso A
+proceso_A: crea los manejadores de alarma e imprime por pantalla la salida del proceso A, recibe la señal SIGUSR1 del proceso Z para ejecutar pstree, una vez ejecutado pstree y pasada la espera envia la señal SIGUSR2 a B para que termine sus procesos hijos, una vez muerto B imprime por pantalla su ultima salida y muere
+crear_B: crea el proceso B, imprime error si hay un error de fork, de lo contrario pasa al proceso B
+proceso_B: imprime la salida de B por pantalla, pasa a la creacion de X,Y y Z tras lo cual espera a recibir la señal SIGUSR2 que envia A, una vez recibida envia señales SIGUSR2 a sus hijos para que estos terminen en el orden especificado de Z, Y y X, una vez estos terminan el proceso B termina tambien
+crear_X: crea el proceso X, imprime error si hay un error de fork, de lo contrario pasa al proceso X
+proceso_X: imprime la salida de X por pantalla y espera hasta que se recibe la señal SIGUSR2 de B, al recibir esta señal imprime su ultima salida y muere
+crear_Y: crea el proceso Y, imprime error si hay un error de fork, de lo contrario pasa al proceso Y
+proceso_Y: imprime la salida de Y por pantalla y espera hasta que se recibe la señal SIGUSR2 de B, al recibir esta señal imprime su ultima salida y muere
+crear_Z: crea el proceso Z, imprime error si hay un error de fork, de lo contrario pasa al proceso Z
+proceso_Z: imprime la salida de Z por pantalla tras lo cual crea una alarma con los segundos pasados al programa, al recibir SIGALRM envia la señal SIGUSR1 a A para ejecutar pstree y espera a recibir la señal SIGUSR2 de B, una vez recibida imprime su ultima salida y muere
+main: recibe los argumentos y los envia a la funcion de comprobacion, llama a la funcion del proceso principal ejec.
