@@ -1,4 +1,4 @@
-
+ra
 //NO USAR SLEEP O PAUSE, solo usar WAIT();
 
 Enunciado 1:
@@ -52,5 +52,5 @@ proceso_X: imprime la salida de X por pantalla y espera hasta que se recibe la s
 crear_Y: crea el proceso Y, imprime error si hay un error de fork, de lo contrario pasa al proceso Y
 proceso_Y: imprime la salida de Y por pantalla y espera hasta que se recibe la señal SIGUSR2 de B, al recibir esta señal imprime su ultima salida y muere
 crear_Z: crea el proceso Z, imprime error si hay un error de fork, de lo contrario pasa al proceso Z
-proceso_Z: imprime la salida de Z por pantalla tras lo cual crea una alarma con los segundos pasados al programa, al recibir SIGALRM envia la señal SIGUSR1 a A para ejecutar pstree y espera a recibir la señal SIGUSR2 de B, una vez recibida imprime su ultima salida y muere
+proceso_Z: imprime la salida de Z por pantalla tras lo cual crea una alarma con los segundos pasados al programa y entra en espera, al recibir SIGALRM envia la señal SIGUSR1 a A para ejecutar pstree y espera a recibir la señal SIGUSR2 de B, una vez recibida imprime su ultima salida y muere
 main: recibe los argumentos y los envia a la funcion de comprobacion, llama a la funcion del proceso principal ejec.
