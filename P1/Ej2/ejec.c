@@ -111,7 +111,7 @@ void proceso_ejec(){
     printf("Soy el proceso ejec mi pid es: %d \n",impEjec);
     crear_A();
     wait(NULL);
-    printf("Soy el proceso ejec (%d) y muero \n",impEjec);
+    printf("Soy ejec (%d) y muero \n",impEjec);
     
 }
 
@@ -146,7 +146,7 @@ void proceso_B(){
     kill(X,SIGUSR2);
     wait(NULL);
             
-    printf("Soy el proceso B (%d) y muero \n",getpid());      
+    printf("Soy B (%d) y muero \n",getpid());      
     exit(0);
 }
 
