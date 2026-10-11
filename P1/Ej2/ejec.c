@@ -123,7 +123,7 @@ void proceso_A(){
     signal(SIGUSR1,ejec_pstree);
     signal(SIGUSR2,ejec_destruir);
     B=crear_B();
-    while(ejec_pstree==0){}
+    while(pstree==0){}
     gestor(impEjec);
     kill(B,SIGUSR2);
     wait(NULL);
