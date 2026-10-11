@@ -138,6 +138,7 @@ void proceso_B(){
     X=crear_X();
     Y=crear_Y();
     Z=crear_Z();
+    kill(impA,SIGUSR1);
     while(destruir==0){}
     kill(Z,SIGUSR2);
     wait(NULL);
@@ -170,7 +171,6 @@ void proceso_Z(){
     printf("Soy el proceso Z mi pid es: %d, mi padres es %d, mi abuelo es %d, mi bisabuelo es %d \n",getpid(),getppid(),impA,impEjec);
     alarm(segundos);
     while(alarma==0){}
-    kill(impA,SIGUSR1);
     while(destruir==0){}
     printf("Soy Z (%d) y muero \n",getpid());
 }
