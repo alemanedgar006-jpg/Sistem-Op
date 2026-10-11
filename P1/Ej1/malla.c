@@ -4,14 +4,16 @@
 #include <sys/wait.h>
 
 pid_t root;
+int x=0;
+int y=0;
 
-void comprobar_argumentos(int argc, char *argv[],int *x, int *y){
+void comprobar_argumentos(int argc, char *argv[]){
   if(argc!=3){
     printf("ERROR DE ARGUMENTOS");
     exit(1);
   }
-  *x=atoi(argv[1]);
-  *y=atoi(argv[2]);
+  x=atoi(argv[1]);
+  y=atoi(argv[2]);
   if(*x<=0||*y<=0){
     printf("ARGUMENTOS INVALIDOS");
     exit(1);
@@ -31,7 +33,7 @@ void gestor(){
   wait(NULL);
 }
 
- void crear_procesos(int x, int y){
+ void crear_procesos(){
    
   pid_t pid;
 for(int j=0;j<y;j++){
@@ -67,11 +69,7 @@ for(int j=0;j<y;j++){
 
 int main(int argc, char *argv[]){
   root=getpid();
-
-  root=getpid();
-  int x=0;
-  int y=0;
-  comprobar_argumentos(argc,argv,&x,&y);
+  comprobar_argumentos(argc,argv);
   crear_procesos(x,y);
 
     exit(0);
